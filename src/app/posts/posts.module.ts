@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'blog', component: PostListComponent },
   { path: 'blog/:id', component: PostDetailComponent },
   { path: 'dashboard', component: PostDashboardComponent },
-]
+];
 
 @NgModule({
   declarations: [PostDashboardComponent, PostDetailComponent, PostListComponent],
