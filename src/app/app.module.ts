@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { PostsModule } from './posts/posts.module';
 
 @NgModule({
   declarations: [
@@ -21,15 +22,15 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     SharedModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
-  ],
+    AngularFireStorageModule, PostsModule, // imports firebase/storage only needed for storage features
+    AppRoutingModule //https://stackoverflow.com/questions/48991372/angular-error-uncaught-in-promise-at-webpackasynccontext-eval-at-src
+],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })
