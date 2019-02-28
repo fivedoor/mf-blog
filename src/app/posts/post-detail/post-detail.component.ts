@@ -11,7 +11,7 @@ import { AuthService } from '../../core/auth.service';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
-  post: Post
+  post: Post;
   editing: boolean = false;
 
   constructor(
@@ -23,6 +23,8 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getPost();
+    console.log('PostDetailComponent:');
+    console.log(this);
   }
 
   getPost(): void {
@@ -34,10 +36,10 @@ export class PostDetailComponent implements OnInit {
     const formData = {
       title: this.post.title,
       content: this.post.content
-    }
+    };
     const id = this.route.snapshot.paramMap.get('id');
     this.postService.update(id, formData);
-    this.editing = false
+    this.editing = false;
   }
 
   delete() {
