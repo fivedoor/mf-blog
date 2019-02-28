@@ -6,6 +6,9 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { SharedModule } from '../shared/shared.module';
 
+import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
+
+
 const routes: Routes = [
   { path: 'blog', component: PostListComponent },
   { path: 'blog/:id', component: PostDetailComponent },
@@ -13,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [PostDashboardComponent, PostDetailComponent, PostListComponent],
+  declarations: [PostDashboardComponent, PostDetailComponent, PostListComponent, LoadingSpinnerComponent],
     imports: [SharedModule, RouterModule.forChild(routes)],
 
 })

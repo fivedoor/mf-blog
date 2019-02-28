@@ -1,26 +1,10 @@
-<section>
-  <div *ngFor="let post of posts | async">
-    <div routerLink="{{post.id}}">
-      <img div-image src="{{post.image}}" alt="{{post.title}}">
-      <h2>{{post.title}}</h2>
-      <p>
-        <small>Posted by {{post.author}} &bull; on {{post.published.toDate() | date:"fullDate"}}</small>
-      </p>
-    </div>
-    <div align="end" *ngIf="auth.currentUserId === post.authorId">
-      <button mat-icon-button (click)="delete(post.id)">
-        <div>delete</div>
-      </button>
-    </div>
-  </div>
-</section>
-<section>
-<!--   <mat-card *ngFor="let post of posts | async">
+ <section scrollable (scrollPosition)="scrollHandler($event)" class="container">
+   <mat-card *ngFor="let post of page.data | async">
     <mat-card-content routerLink="{{post.id}}">
       <img mat-card-image src="{{post.image}}" alt="{{post.title}}">
       <h2>{{post.title}}</h2>
       <p>
-        <small>Posted by {{post.author}} &bull; on {{post.published | date:"fullDate"}}</small>
+        <small>Posted {{post.published.toDate() | date:"fullDate"}}</small>
       </p>
     </mat-card-content>
     <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
@@ -29,4 +13,66 @@
       </button>
     </mat-card-actions>
   </mat-card>
-</section> -->
+   <p *ngIf="page.done | async">I ran out of posts!</p>
+    <app-loading-spinner  *ngIf="page.loading | async"></app-loading-spinner >
+
+</section> 
+
+<!--  <cdk-virtual-scroll-viewport itemSize="100" (scrolledIndexChange)="nextBatch($event, (posts[posts.length - 1].title))">
+<section *ngIf="infinite | async as posts">
+
+    <mat-card *cdkVirtualFor="let post of posts; let i = index; trackBy: trackByIdx" class="animated lightSpeedIn">
+    <mat-card-content routerLink="{{post.id}}">
+      <img mat-card-image src="{{post.image}}" alt="{{post.title}}">
+      <h2>{{post.title}}</h2>
+      <p>
+        <small>Posted by {{post.author}} &bull; on {{post.published.toDate() | date:"fullDate"}}</small>
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
+      <button mat-icon-button (click)="delete(post.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+    <iframe *ngIf="theEnd" src="https://giphy.com/embed/lD76yTC5zxZPG" width="480"
+      height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+</section>
+
+
+  </cdk-virtual-scroll-viewport>
+ -->
+
+
+
+
+
+<!-- 
+<section>
+   <mat-card *ngFor="let post of posts | async">
+    <mat-card-content routerLink="{{post.id}}">
+      <img mat-card-image src="{{post.image}}" alt="{{post.title}}">
+      <h2>{{post.title}}</h2>
+      <p>
+        <small>Posted {{post.published.toDate() | date:"fullDate"}}</small>
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
+      <button mat-icon-button (click)="delete(post.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section> -->  
+
+<!-- <div class="content" scrollable (scrollPosition)="scrollHandler($event)">
+
+  <div *ngFor="let boat of page.data | async">
+    <h1>Built in {{ boat.published }}</h1>
+    <img [src]="boat.image">
+  </div>
+
+  <p *ngIf="page.done | async">I ran out of boats!</p>
+  <app-loading-spinner  *ngIf="page.loading | async"></app-loading-spinner >
+</div>
+ -->
