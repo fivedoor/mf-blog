@@ -1,17 +1,5 @@
-<p>
-  post-detail works!
-</p>
+
 <ng-container *ngIf="post">
-      <h2>{{post.title}}</h2>
-            <h2>{{post.id}}</h2>
-
- <small>Posted by {{post.author}} &bull; on {{post.published.toDate() | date:"fullDate"}}</small>
- <button (click)="delete(post.id)">
-     delete
-        </button>
-</ng-container>
-
-  <!-- <ng-container *ngIf="post">
 
 <div [hidden]="!editing">
     <mat-card>
@@ -50,4 +38,3 @@
     </mat-card>
   </div>
 </ng-container>
- -->

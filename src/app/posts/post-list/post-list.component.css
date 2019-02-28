@@ -1,0 +1,22 @@
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+mat-card-content {
+	outline: none;
+	cursor:pointer;
+}
+mat-card {
+  margin: 10px 0;
+}
+
+section img {  
+  height: 300px;
+   object-fit: cover;
+}
+

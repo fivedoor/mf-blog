@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './core/auth.service';
 import { PostService } from './posts/post.service';
+//import { FormsModule } from '@angular/forms';
 
 
 import { AngularFireModule } from '@angular/fire';
@@ -24,6 +25,7 @@ import { PostsModule } from './posts/posts.module';
     AppComponent
   ],
   imports: [
+//    FormsModule,
     BrowserModule,
     CoreModule,
     SharedModule,
@@ -32,7 +34,7 @@ import { PostsModule } from './posts/posts.module';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
-    PostsModule, 
+    PostsModule,
     AppRoutingModule //https://stackoverflow.com/questions/48991372/angular-error-uncaught-in-promise-at-webpackasynccontext-eval-at-src
 ],
   providers: [AuthService, PostService],

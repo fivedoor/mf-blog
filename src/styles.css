@@ -1,4 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+
+}
+
+
+h2,p,small { 
+	color: #666666; 
+}
+h2,small {
+	font-weight: 300
+}
+
+button {
+	box-shadow: none !important;
+	border-radius: 0 !important;
+}
+
+.nav-button span{
+	color: #666666 !important;
+
+}
+
+.my-nav {
+	background: #ffffff !important;
+}
+
+.title {
+	color: #666666; 
+	/* font-family: 'ZCOOL KuaiLe', cursive; */
+	letter-spacing: 0;
+	font-size: 25px;
+	font-weight: 300
+
+}
