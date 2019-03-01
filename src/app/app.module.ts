@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './core/auth.service';
 import { PostService } from './posts/post.service';
-//import { FormsModule } from '@angular/forms';
-
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -25,7 +23,6 @@ import { PostsModule } from './posts/posts.module';
     AppComponent
   ],
   imports: [
-//    FormsModule,
     BrowserModule,
     CoreModule,
     SharedModule,

@@ -2,12 +2,12 @@
   <mat-toolbar-row>
     <span class="title" routerLink="/" >Mr Frederic</span>
     <span class="spacer"></span>
-    <button routerLink="/dashboard" mat-raised-button color="accent">Write a Post</button>
+    <button *ngIf="auth.afAuth.authState | async as user;" routerLink="/dashboard" mat-raised-button color="accent">Write a Post</button>
     <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
     <button (click)="auth.logout()" mat-button class="nav-button">Logout</button>
     </div>
     <ng-template #showLogin>
-      <button (click)="auth.login()" mat-button class="nav-button">Login with Google</button>
+      <button (click)="auth.login()" mat-button class="nav-button">Login</button>
     </ng-template>
   </mat-toolbar-row>
 </mat-toolbar>

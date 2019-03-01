@@ -1,11 +1,11 @@
 
-<section>
+<section infinite-scroll (scrolled)="onScrollDown()">
   <mat-card *ngFor="let post of posts | async">
     <mat-card-content routerLink="{{post.id}}">
       <img mat-card-image src="{{post.image}}" alt="{{post.title}}">
       <h2>{{post.title}}</h2>
       <p>
-        <small>Posted by {{post.author}} &bull; on {{post.published.toDate() | date:"fullDate"}}</small>
+        <small>Posted on {{post.published.toDate() | date:"fullDate"}}</small>
       </p>
     </mat-card-content>
     <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
