@@ -3,10 +3,12 @@
   <mat-card *ngFor="let post of posts | async">
     <mat-card-content routerLink="{{post.id}}">
       <img mat-card-image src="{{post.image}}" alt="{{post.title}}">
-      <h2>{{post.title}}</h2>
+    <!--   <h2>{{post.title}}</h2>
       <p>
         <small>Posted on {{post.published.toDate() | date:"fullDate"}}</small>
-      </p>
+      </p> -->
+      <h2>  {{post.title}}</h2>
+     
     </mat-card-content>
     <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
       <button mat-icon-button (click)="delete(post.id)">

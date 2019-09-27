@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-
+body { 
+	margin: 0; 
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+/* 	background-color: #eeeeee;
+ */
 }
 
 
@@ -27,11 +30,21 @@ button {
 	background: #ffffff !important;
 }
 
+.mat-toolbar.mat-primary {
+	margin-bottom: 20px;
+
+}
+
 .title {
 	color: #666666; 
 	/* font-family: 'ZCOOL KuaiLe', cursive; */
-	letter-spacing: 0;
+	letter-spacing: 2px;
 	font-size: 26px;
-	font-weight: 300
-
+	font-weight: 400
 }
+
+/* mat-card {
+  margin: 10px auto;
+  box-sizing: content-box;
+  max-width: 100% !important;
+} */

@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  AngularFirestore,
-  AngularFirestoreCollection,
-  AngularFirestoreDocument
-} from '@angular/fire/firestore';
+import { AngularFirestore,AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Post } from './post';
 import { map } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -37,14 +33,14 @@ latestEntry: any;
     }));
   }
 // In your first query you subscribe to the collection and save the latest entry
- getFirstPosts() {
-       console.log('FUNC: getFirstPosts()');
-  this._data = new BehaviorSubject([]);
-  this.data = this._data.asObservable();
+  getFirstPosts() {
+    console.log('FUNC: getFirstPosts()');
+    this._data = new BehaviorSubject([]);
+    this.data = this._data.asObservable();
 
   const postsRef = this.getCollection('posts', ref => ref
     .orderBy('published', 'desc')
-    .limit(6))
+    .limit(15))
     .subscribe(data => {
       this.latestEntry = data[data.length - 1].doc;
       this._data.next(data);
@@ -52,7 +48,8 @@ latestEntry: any;
   }
 
    getMorePosts(limitNumber) {
- console.log('FUNC: getMorePosts(' + limitNumber + ')');    const postsRef = this.getCollection('posts', ref => ref
+      console.log('FUNC: getMorePosts(' + limitNumber + ')');
+      const postsRef = this.getCollection('posts', ref => ref
       .orderBy('published', 'desc')
        // Now you can use the latestEntry to query with startAfter
       /*.startAfter(this.latestEntry)*/

@@ -1,7 +1,23 @@
 mat-card {
   margin: 10px auto;
-  max-width: 700px;
-}
+/*   http://thenewcode.com/894/Shrink-Wrap-HTML-containers-with-max-content
+ */  max-width: max-content;
+   /*padding: 0; */
+
+/*  max-width: 600px  
+ */}
+
 mat-form-field {
   width: 100%;
 }
+
+.mat-card-image {
+	/* width: 100%; */
+}
+
+/* 
+ .md-unstyled-image img{
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important; 
+}  */

@@ -1,4 +1,3 @@
-
 <ng-container *ngIf="post">
 
 <div [hidden]="!editing">
@@ -17,12 +16,12 @@
   </mat-card>
   </div>
 
-  <div [hidden]="editing">
+  <div [hidden]="editing" class="md-unstyled-image">
     <mat-card>
-      <img mat-card-image src="{{post.image}}" alt="{{post.title}}">
+      <img mat-card-image src="{{post.image}}" alt="{{post.title}}" class="detail-img">
       <h2>{{post.title}}</h2>
       <p>
-        <small>Posted by {{post.author}} &bull; on {{post.published.toDate() | date:"fullDate"}}</small>
+        <small>Posted on {{post.published.toDate() | date:"fullDate"}}</small>
       </p>
       <mat-card-content>
         <p>{{ post.content }}</p>
