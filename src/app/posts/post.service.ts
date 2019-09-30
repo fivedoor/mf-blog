@@ -40,7 +40,7 @@ latestEntry: any;
 
   const postsRef = this.getCollection('posts', ref => ref
     .orderBy('published', 'desc')
-    .limit(15))
+    .limit(20))
     .subscribe(data => {
       this.latestEntry = data[data.length - 1].doc;
       this._data.next(data);
@@ -52,7 +52,7 @@ latestEntry: any;
       const postsRef = this.getCollection('posts', ref => ref
       .orderBy('published', 'desc')
        // Now you can use the latestEntry to query with startAfter
-      /*.startAfter(this.latestEntry)*/
+      .startAfter(this.latestEntry)
       .limit(limitNumber))
       .subscribe(data => {
         if (data.length) {

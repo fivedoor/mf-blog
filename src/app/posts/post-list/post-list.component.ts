@@ -12,7 +12,7 @@ import { AuthService } from '../../core/auth.service';
 })
 export class PostListComponent implements OnInit {
 
-  limitNumber = 15;
+  limitNumber = 20;
 
   posts: Observable<Post[]>;
   constructor(private postService: PostService, public auth: AuthService) {}
