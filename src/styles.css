@@ -15,6 +15,9 @@ h2,h3,p,small {
 h2,h3,small {
 	font-weight: 300
 }
+h2 {
+	font-size: 1.35em;
+}
 
 button {
 	box-shadow: none !important;
@@ -38,7 +41,7 @@ button {
 .title {
 	color: #666666; 
 	/* font-family: 'ZCOOL KuaiLe', cursive; */
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	font-size: 26px;
 	font-weight: 400
 }
